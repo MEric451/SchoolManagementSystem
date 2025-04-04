@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullName": "Admin User",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    
+    {
+      "id": "2",
+      "fullName": "Student User",
+      "email": "student@example.com",
+      "password": "student123",
+      "role": "student"
+    },
+    {
+      "id": "9451",
+      "fullName": "gtyt",
+      "email": "gty@gmail.com",
+      "userType": "teacher",
+      "password": "123123123"
+    },
+    {
+      "id": "d232",
+      "grade": "B",
+      "scoreRange": "60"
+    },
+    {
+      "id": "fdb5",
+      "grade": "A",
+      "scoreRange": "85"
+    },
+    {
+      "id": "643b",
+      "grade": "A-",
+      "scoreRange": "88"
+    },
+    {
+      "id": "561d",
+      "grade": "A-",
+      "scoreRange": "85"
+    },
+
+
+    { "id": 1, "subject": "Mathematics", "score": 90, "grade": "A" },
+    { "id": 2, "subject": "Mathematics", "score": 80, "grade": "B" },
+    { "id": 3, "subject": "Mathematics", "score": 70, "grade": "C" },
+    { "id": 4, "subject": "Mathematics", "score": 60, "grade": "D" },
+    { "id": 5, "subject": "Mathematics", "score": 50, "grade": "E" },
+    { "id": 6, "subject": "English", "score": 85, "grade": "A" },
+    { "id": 7, "subject": "English", "score": 75, "grade": "B" },
+    { "id": 8, "subject": "English", "score": 65, "grade": "C" },
+    { "id": 9, "subject": "English", "score": 55, "grade": "D" },
+    { "id": 10, "subject": "English", "score": 45, "grade": "E" }
+  ]
+}

@@ -1,0 +1,45 @@
+<div class="grades-container">
+    <h2 class="manage">Manage Grades</h2>
+  
+    <!-- Grade Form -->
+    <form [formGroup]="gradeForm" (ngSubmit)="editingGrade ? updateGrade() : addGrade()">
+      <label>Student Name</label>
+      <input type="text" formControlName="studentName" placeholder="Enter student name" required />
+  
+      <label>Select Form</label>
+      <select formControlName="formId">
+        <option *ngFor="let form of forms" [value]="form.id">{{ form.name }}</option>
+      </select>
+  
+      <label>Select Stream</label>
+      <select formControlName="streamId">
+        <option *ngFor="let stream of streams" [value]="stream.id">{{ stream.name }}</option>
+      </select>
+  
+      <label>Select Subject</label>
+      <select formControlName="subjectId">
+        <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.name }}</option>
+      </select>
+  
+      <label>Enter Score</label>
+      <input type="number" formControlName="score" placeholder="Enter score (0-100)" required />
+  
+      <div class="form-buttons">
+        <button type="button" *ngIf="editingGrade" (click)="cancelEdit()">Cancel</button>
+        <button type="submit">{{ editingGrade ? 'Update' : 'Add' }}</button>
+      </div>
+    </form>
+  
+    <!-- Display Grades -->
+    <div class="grades-list">
+      <h3>Grades List</h3>
+      <ul>
+        <li *ngFor="let grade of grades">
+          {{ grade.studentName }} | {{ getSubjectName(grade.subjectId) }} | Score: {{ grade.score }} | Grade: {{ grade.grade }}
+          <button (click)="loadGradeForEdit(grade)">Edit</button>
+          <button (click)="deleteGrade(grade)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

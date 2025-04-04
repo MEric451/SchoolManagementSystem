@@ -1,0 +1,71 @@
+/* Container for the entire Streams component */
+.streams-container {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 16px;
+    background-color: #f9f9f9;
+
+    /*Animations*/
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.7s ease-out forwards;
+  }
+  
+  /* Full width utility class */
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Style for all Angular Material cards */
+  .mat-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card titles: increased font size and margin for clarity */
+  .mat-card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* List items styling */
+  .stream-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Icon buttons spacing */
+  button.mat-icon-button {
+    margin-left: 8px;
+  }
+  
+  /* Form styling for the Add/Edit Stream form */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Button minimum width for consistency */
+  button[mat-stroked-button],
+  button[mat-raised-button] {
+    min-width: 100px;
+  }
+  
+  /* Adjust input focus styling for a better user experience */
+  .mat-form-field.mat-focused .mat-form-field-outline-thick {
+    color: #007bff;
+    border-color: #007bff;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

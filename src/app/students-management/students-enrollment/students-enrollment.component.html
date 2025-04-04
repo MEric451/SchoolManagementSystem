@@ -1,0 +1,52 @@
+
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()" >
+    <mat-card>
+      <mat-card-title class="title">Student Enrollment</mat-card-title>
+      <mat-card-content>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required>
+        </mat-form-field>
+  
+        
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required>
+        </mat-form-field>
+  
+        
+        
+        <mat-form-field appearance="outline">
+          <mat-label>classLevel</mat-label>
+          <mat-select formControlName="classLevel" required>
+            <mat-option *ngFor="let class of classLevels" [value]="class.level">
+              {{ class.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Stream</mat-label>
+          <mat-select formControlName="streamID" required>
+            <mat-option *ngFor="let stream of streamID" [value]="stream.level">
+              {{ stream.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput formControlName="dateOfBirth" type="date" required>
+        </mat-form-field>
+  
+       
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="studentForm.invalid">
+          Enroll Student
+        </button>
+        
+      </mat-card-content>
+    </mat-card>
+  </form>

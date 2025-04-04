@@ -1,0 +1,27 @@
+<div class="forms-container">
+    <h2>Manage Forms</h2>
+    
+    <!-- List of Forms -->
+    <ul>
+      <li *ngFor="let form of forms">
+        {{ form.name }}
+        <div class="actions">
+          <button (click)="loadFormForEdit(form)">Edit</button>
+          <button (click)="deleteForm(form)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  
+    <!-- Add/Edit Form -->
+    <div class="form-input">
+      <h3>{{ editingForm ? 'Edit Form' : 'Add New Form' }}</h3>
+      <form [formGroup]="formForm" (ngSubmit)="editingForm ? updateForm() : addForm()">
+        <input type="text" formControlName="name" placeholder="Enter form name" />
+        <button type="submit" [disabled]="formForm.invalid">
+          {{ editingForm ? 'Update' : 'Add' }}
+        </button>
+        <button type="button" *ngIf="editingForm" (click)="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,108 @@
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.students-profile {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+     /* Animation */
+     opacity: 0;
+     transform: translateY(-10px);
+     animation: fadeIn 0.7s ease-out forwards;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .student-count-card {
+    max-width: 400px;
+    margin: 15px auto;
+    padding: 16px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 12px; /* Rounded corners */
+    border-left: 7px solid #005a4f;
+  }
+
+  .count-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #005a4f; 
+    background-color: #e8f5e9; /* Light green background */
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: 8px;
+
+  }
+
+  .totals {
+    font-size: 20px;
+  }
+  
+  .student-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .student-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  .info p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .edit-form {
+    margin-top: 20px;
+    
+  }
+  
+  .mat-form-field {
+    width: 100%;
+   
+  }
+
+  .field-row {
+    display: flex;
+    gap: 20px; /* Space between the two fields */
+}
+
+.field-row .mat-form-field {
+    flex: 1; /* Makes both fields equal width */
+}
+
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 20px;  }
+  

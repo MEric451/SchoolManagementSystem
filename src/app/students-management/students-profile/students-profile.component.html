@@ -1,0 +1,96 @@
+<div class="students-profile">
+    <h2>Students Profiles</h2>
+    <mat-card class="student-count-card">
+        <mat-card-content>
+          <h3 class="totals">Total Registered Students: </h3>
+          <span class="count-number">{{ students.length }}</span>
+        </mat-card-content>
+      </mat-card>
+  
+    <!-- Student Table -->
+    <table mat-table [dataSource]="students" class="mat-elevation-z8">
+      <!-- First Name Column -->
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.firstName }} </td>
+      </ng-container>
+  
+      <!-- Last Name Column -->
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name </th>
+        <td mat-cell *matCellDef="let student"> {{ student.lastName }} </td>
+      </ng-container>
+  
+      <!-- Class Level Column -->
+      <ng-container matColumnDef="classLevel">
+        <th mat-header-cell *matHeaderCellDef> Class Level </th>
+        <td mat-cell *matCellDef="let student"> {{ student.classLevel }} </td>
+      </ng-container>
+  
+      <!-- Stream Column -->
+      <ng-container matColumnDef="streamID">
+        <th mat-header-cell *matHeaderCellDef> Stream </th>
+        <td mat-cell *matCellDef="let student"> {{ student.classStreamName }} </td>
+      </ng-container>
+  
+      <!-- Date of Birth Column -->
+      <ng-container matColumnDef="dateOfBirth">
+        <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+        <td mat-cell *matCellDef="let student"> {{ student.dateOfBirth }} </td>
+      </ng-container>
+  
+      <!-- Edit Button Column -->
+      <ng-container matColumnDef="actions">
+  <th mat-header-cell *matHeaderCellDef> Actions </th>
+  <td mat-cell *matCellDef="let student">
+    <button mat-icon-button color="primary" (click)="editProfile(student)">
+      <mat-icon>edit</mat-icon>
+    </button>
+   <!--<button mat-icon-button color="warn" (click)="deleteProfile(student)">
+      <mat-icon>delete</mat-icon>
+    </button>-->
+  </td>
+</ng-container>
+
+  
+      <tr mat-header-row *matHeaderRowDef="['firstName', 'lastName', 'classLevel', 'streamID', 'dateOfBirth', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['firstName', 'lastName', 'classLevel', 'streamID', 'dateOfBirth', 'actions'];"></tr>
+    </table>
+  
+    <!-- Edit Form - Shows only when Editing -->
+    <div *ngIf="isEditing">
+      <h3>Edit Student Profile</h3>
+      <form [formGroup]="studentForm">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Class Level</mat-label>
+          <input matInput formControlName="classLevel" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Stream</mat-label>
+          <input matInput formControlName="streamID" required />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-label>Date of Birth</mat-label>
+          <input matInput formControlName="dateOfBirth" type="date" required />
+        </mat-form-field>
+  
+        <div class="buttons">
+          <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+          <button mat-raised-button color="accent" type="button" (click)="saveProfile()" [disabled]="studentForm.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

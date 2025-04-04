@@ -1,0 +1,56 @@
+<div class="subjects-container">
+  
+    <!-- 🔍 Search Form -->
+    <form class="search-form">
+      <label for="search">Search Subjects</label>
+      <input type="text" id="search" placeholder="Enter subject name or code" [(ngModel)]="searchTerm" name="searchTerm" />
+    </form>
+  
+    <!-- 📋 Subjects List (Scrollable) -->
+    <div class="subjects-list-container">
+      <h2>Subjects List</h2>
+      <ul class="subjects-list">
+        <li *ngFor="let subject of filteredSubjects" class="subject-item">
+          <div class="subject-info">
+            <strong>{{ subject.name }}</strong> <span *ngIf="subject.code">({{ subject.code }})</span>
+            <p *ngIf="subject.description">{{ subject.description }}</p>
+            <p *ngIf="subject.category"><b>Category:</b> {{ subject.category }}</p>
+          </div>
+          <div class="actions">
+            <button mat-icon-button color="primary" (click)="loadSubjectForEdit(subject)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" class="delete-btn" (click)="deleteSubject(subject)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          
+        </li>
+      </ul>
+    </div>
+  
+    <!-- ➕ Add/Edit Subject Form -->
+    <form [formGroup]="subjectForm" class="subject-form" (ngSubmit)="editingSubject ? updateSubject() : addSubject()">
+      <h2>{{ editingSubject ? 'Edit Subject' : 'Add New Subject' }}</h2>
+  
+      <label for="name">Subject Name</label>
+      <input type="text" id="name" formControlName="name" placeholder="Enter subject name" required />
+      
+      <label for="code">Subject Code</label>
+      <input type="text" id="code" formControlName="code" placeholder="Enter subject code" />
+  
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" placeholder="Enter description"></textarea>
+  
+      <label for="category">Category</label>
+      <input type="text" id="category" formControlName="category" placeholder="e.g., STEM, Languages, Arts, Humanities, e.t.c..." />
+  
+      <div class="form-buttons">
+         <button type="button" class="cancel-btn" *ngIf="subjectForm.dirty" (click)="resetForm()">Cancel</button>
+        <button type="submit" class="submit-btn" [disabled]="subjectForm.invalid">
+          {{ editingSubject ? 'Update' : 'Add' }}
+        </button>
+      </div>
+    </form>
+  </div>
+  

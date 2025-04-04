@@ -1,0 +1,47 @@
+mat-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Form field styling */
+mat-form-field {
+  width: 100%;
+  
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #005a4f;
+  color: white;
+}
+
+/* Heading styling */
+h3 {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}

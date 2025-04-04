@@ -1,0 +1,220 @@
+.dashboard-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Toolbar - Dark Teal */
+.dashboard-container mat-toolbar {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #00796B; /* Dark Teal */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container mat-toolbar span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #ffffff;
+}
+
+.dashboard-container mat-toolbar a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+.dashboard-container mat-toolbar a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-container mat-toolbar .spacer {
+    flex: 1;
+}
+
+/* Sidenav Container */
+.dashboard-container mat-sidenav-container {
+    height: 100vh;
+}
+
+/* === CHANGES START HERE === */
+
+/* Sidebar Styling - Changed to Gray */
+.dashboard-container mat-sidenav {
+    width: 250px;
+    padding: 10px;
+    background-color: #424242; /* Changed to Gray */
+    color: #ffffff;
+    border-right: 2px solid aliceblue; /* Added separator line */
+}
+
+/* Updated Dashboard Text Color */
+.dashboard-container mat-nav-list a[routerLink='/dashboard/layout'] {
+    color: #ffffff !important; /* Set Dashboard text color to white */
+}
+
+/* === CHANGES END HERE === */
+
+/* Sidebar Background - Light Gray */
+.dashboard-container mat-sidenav {
+    width: 250px;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Darker text for readability */
+    border-right: 2px solid aliceblue; /* Separator line */
+}
+
+/* Remove Background & Set Black Font Color for Main Menu Items */
+.dashboard-container mat-nav-list a[routerLink='/dashboard/layout'],
+.dashboard-container .config-header,
+.dashboard-container .stud-header {
+    color: black !important; /* Plain black text */
+    font-weight: normal; /* Remove bold */
+    background: none !important; /* Remove background */
+    padding: 10px;
+    border-radius: 0; /* Remove rounded corners */
+    display: block; /* Ensure proper alignment */
+}
+
+/* Remove ">" Symbol from Configuration & Students Management */
+.dashboard-container .config-header::before,
+.dashboard-container .stud-header::before {
+    content: ""; /* Remove the '>' */
+}
+
+/* Remove Background from Child Menu Items (Grades, Forms, Streams, etc.) */
+.dashboard-container mat-sidenav .submenu button {
+    background: none !important; /* Remove background */
+    color: black; /* Normal text */
+    border: none !important; /* Remove borders */
+    padding: 5px 10px;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+
+
+/* Logout Button - Plain Black Text */
+.dashboard-container mat-sidenav li a {
+    color: black !important; /* Black font */
+    font-weight: normal; /* Remove bold */
+}
+
+
+
+/* Section Headers (Configuration, Students Management) */
+.config-header {
+    display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 8px; /* Adds spacing between icon and text */
+  cursor: pointer;
+  padding: 10px;
+  vertical-align: center;
+}
+
+
+
+/* Configuration & Students Management Submenus */
+.submenu {
+    padding-left: 20px;
+   
+    border-radius: 5px;
+
+    color: #ffffff;
+}
+
+.submenu li {
+    padding: 8px;
+    border-bottom: 1px solid #5c6bc0;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.submenu li a:hover {
+    color: #c5cae9;
+}
+
+/* Additional List Items */
+.dashboard-container mat-sidenav li {
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dashboard-container mat-sidenav li:hover {
+    background-color: #3949ab;
+    border-radius: 5px;
+}
+
+.dashboard-container mat-sidenav li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.dashboard-container mat-sidenav li a:hover {
+    color: #c5cae9;
+}
+
+/* Content Area */
+.dashboard-container mat-sidenav-content {
+    background: #f4f6f9;
+    padding: 20px;
+}
+
+.dashboard-container mat-sidenav-content h1 {
+    color: #333;
+    font-size: 2rem;
+}
+
+.dashboard-container mat-sidenav-content p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+
+/* Logout Button - Centered */
+/* Logout Button Styling */
+.dashboard-container mat-sidenav .logout-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #00796B; /* Background color */
+    color: white !important; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+
+.dashboard-container mat-sidenav .logout-item:hover {
+    background-color: #005a4f; /* Darker shade on hover */
+}
+
+.menu-icon {
+    color: #005a4f !important;
+    vertical-align: middle;
+    font-size: 22px;
+}

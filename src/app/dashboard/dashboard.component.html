@@ -1,0 +1,82 @@
+<div class="dashboard-container">
+    <!-- Top Toolbar -->
+    <mat-toolbar color="warn">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Student Management System</span>
+     
+      
+      <span class="spacer"></span>
+      <button mat-icon-button routerLink='/signup'>
+        <mat-icon>Register</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar>
+  
+    <!-- Sidebar and Content Container -->
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list>
+          <a mat-list-item routerLink="students-management/students-profile">
+            <mat-icon class="menu-icon">dashboard</mat-icon>
+            <span> Dashboard </span>
+          </a>
+          
+          
+          <!-- Configuration Menu -->
+          <li (click)="toggleConfigMenu()" class="config-header">
+            <mat-icon class="menu-icon">settings</mat-icon>
+            <span> Configuration </span>
+          </li>
+          <ul *ngIf="showConfigMenu" class="submenu">
+           
+            <button mat-button routerLink="configuration/grade" routerLinkActive="active">
+                <mat-icon class="menu-icon">grade</mat-icon> Grades
+              </button>
+              <button mat-button routerLink="configuration/forms" routerLinkActive="active">
+                <mat-icon class="menu-icon">assignment</mat-icon> Forms
+              </button>
+              <button mat-button routerLink="configuration/streams" routerLinkActive="active">
+                <mat-icon class="menu-icon">swap_vert</mat-icon> Streams
+              </button>
+              <button mat-button routerLink="configuration/subjects" routerLinkActive="active">
+                <mat-icon class="menu-icon">menu_book</mat-icon> Subjects
+              </button>
+              
+         
+          </ul>
+  
+          <!-- Students Management Menu -->
+          <li (click)="toggleStudMenu()" class="config-header">
+            <mat-icon class="menu-icon">school</mat-icon>
+            <span> Students Management </span>
+          </li>
+          <ul *ngIf="showStudMenu" class="submenu">
+            <button mat-button routerLink="students-management/students-profile" routerLinkActive="active">
+                <mat-icon class="menu-icon">person</mat-icon> Student Profile
+            </button>
+            <button mat-button routerLink="students-management/grade-management" routerLinkActive="active">
+                <mat-icon class="menu-icon">grading</mat-icon> Grade Management
+            </button>
+            <button mat-button routerLink="students-management/students-enrollment" routerLinkActive="active">
+                <mat-icon class="menu-icon">how_to_reg</mat-icon> Student Enrollment
+            </button>
+        </ul>
+        
+          <button mat-button class="logout-item" (click)="logout()">Logout</button>
+         
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <!-- This is where the form should load -->
+      <mat-sidenav-content>
+        <div class="content-area">
+         
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
